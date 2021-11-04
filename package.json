@@ -1,0 +1,61 @@
+{
+  "name": "pathwiki",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "express": "^4.17.1",
+    "googleapis": "^89.0.0",
+    "mongodb": "^4.1.4",
+    "nodemon": "^2.0.14",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "5.1.2",
+    "react-scripts": "4.0.3",
+    "socket.io": "^4.3.1",
+    "socket.io-client": "^4.3.2",
+    "styled-components": "^5.3.3",
+    "typescript": "^4.4.4",
+    "uuid": "^8.3.2",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "db-up": ": $(mongod --port 27018 --dbpath=./data)",
+    "db-down": ": $(mongo --port 27018 --eval \"db.getSiblingDB('admin').shutdownServer()\")",
+    "server": "yarn db-up & nodemon --trace-warnings -w server server/index.js",
+    "dev": "yarn start & yarn server",
+    "prod": "yarn build && yarn server"
+  },
+  "proxy": "http://localhost:5001",
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "emitWarning": "true"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.34",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-router-dom": "^5.3.2",
+    "@types/styled-components": "^5.1.15"
+  }
+}
